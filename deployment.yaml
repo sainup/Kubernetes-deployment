@@ -14,10 +14,11 @@ spec:
       labels:
         app: fastapi
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: fastapi-container
           image: ghcr.io/sainup/fastapi-app:latest  # Replace with your GHCR image
           ports:
             - containerPort: 8000
-          imagePullSecrets:
-            - name: ghcr-secret
+          
